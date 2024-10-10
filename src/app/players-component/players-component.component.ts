@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { players } from 'src/data/data.ts'; 
+import { players } from '../../data/data'; 
 
 @Component({
   selector: 'app-players-component',
