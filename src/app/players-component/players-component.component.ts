@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { players } from 'src/data/data.ts'; 
 
 @Component({
   selector: 'app-players-component',
@@ -7,6 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './players-component.component.html',
   styleUrl: './players-component.component.css'
 })
-export class PlayersComponentComponent {
-
+export class PlayersComponent {
+  playersList = players;
 }
