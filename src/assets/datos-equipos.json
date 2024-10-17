@@ -1,0 +1,47 @@
+[
+  {
+    "equipo": "AT Madrid",
+    "nombre": "Carlos García",
+    "edad": 29,
+    "sexo": "Masculino",
+    "posicion": "Base",
+    "altura": "1.88m",
+    "partidos": 120
+  },
+  {
+    "equipo": "AT Sevilla",
+    "nombre": "Elena Marin López",
+    "edad": 24,
+    "sexo": "Femenino",
+    "posicion": "Escolta",
+    "altura": "1.75m",
+    "partidos": 80
+  },
+  {
+    "equipo: "AT Barcelona",
+    "nombre": "Luis Fernández",
+    "edad": 31,
+    "sexo": "Masculino",
+    "posicion": "Alero",
+    "altura": "2.02m",
+    "partidos": 150
+  },
+  {
+    "equipo": "AT Valencia",
+    "nombre": "Ana Sanchez Martínez",
+    "edad": 27,
+    "sexo": "Femenino",
+    "posicion": "Ala-pívot",
+    "altura": "1.85m",
+    "partidos": 110
+  },
+  {
+    "equipo": "AT Bilbao",
+    "nombre": "Pedro Sánchez",
+    "edad": 23,
+    "sexo": "Masculino",
+    "posicion": "Pívot",
+    "altura": "2.10m",
+    "partidos": 60
+  }
+]
