@@ -1,5 +1,29 @@
-<app-inicio></app-inicio>
 
-<app-players-component></app-players-component>
-<app-detail-component></app-detail-component>
-<app-media-component></app-media-component>
+
+<form class="ui large form segment">
+  
+<div class="row">
+  <p>{{title}}</p>
+    <div class="col-12 text-center">
+      <div class="container botonespaginainicio">
+        <button (click)="muestraEquipos()"  type="button" class="btn btn-secondary linea" >Equipos</button>
+        <button type="button" class="btn btn-secondary linea">Jugagores</button>
+        <button type="button" class="btn btn-secondary linea">Partidos</button>
+      </div>      
+    </div>
+   
+    <app-lista-equipos *ngIf="componenteVisible">  </app-lista-equipos></div>
+    <app-detail-component></app-detail-component>  
+</form>
+ 
+<!-- <div> estoy en APP root</div> -->
+
+
+
+
+
+
+
+
+
+ 
