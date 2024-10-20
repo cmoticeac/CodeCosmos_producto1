@@ -1,0 +1,18 @@
+<p>Lista-equipos works!</p>
+
+
+<p id="demo"></p>
+<!-- este script de prueba para comproba la lectura del .json-->
+<script>
+document.getElementById("demo").innerHTML = obj.name;
+//console.log(datos);
+</script>
+
+<div *ngIf="datos">
+    <div class="playerItem" *ngFor="let item of datos">
+      <p>Nombre: {{ item.nombre }}</p>
+      <p> - Equipo: {{ item.equipo }}</p>
+      <p> - Edad: {{ item.edad }}</p>
+      <img src="{{item.img}}" alt="{{ item.nombre }}">
+    </div>
+</div>
