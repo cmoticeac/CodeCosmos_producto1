@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { players } from '../../data/data'; 
 import { CommonModule } from '@angular/common';
 import { DetailComponent } from "../detail-component/detail-component.component";
+import { HttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-players-component',
   standalone: true,
-  imports: [CommonModule, DetailComponent],
+  imports: [CommonModule, DetailComponent ],
   templateUrl: './players-component.component.html',
   styleUrl: './players-component.component.css'
 })
@@ -16,38 +19,40 @@ import { DetailComponent } from "../detail-component/detail-component.component"
   C.  Incorporar el HTML+CSS para diseñar el listado
   D. Incorporar el listado a la aplicación
   */
- 
-export class PlayersComponent {
-  posicionSeleccionada: string = '';
-  jugadorEncontrado: any = null;
-  jugadorNoEncontrado: boolean = false;
-  datos: any[] = [ 
-    { nombre: 'Jugador 1', equipo: 'Equipo A', posicion: 'Base' },
-    { nombre: 'Jugador 2', equipo: 'Equipo B', posicion: 'Alero' },
-    // Añade más jugadores aquí para la búsqueda
-  ];
+  export class PlayersComponent implements OnInit {
+    posicionSeleccionada: string = '';
+    jugadorEncontrado: any = null;
+    jugadorNoEncontrado: boolean = false;
+    datos: any[] = [];  // Aquí almacenaremos los jugadores del JSON
   
-  seleccionarPosicion(posicion: string) {
-    this.posicionSeleccionada = posicion;
-  }
+    ngOnInit() {
+      // Cargar los datos usando fetch
+      fetch('/assets/datos-equipos.json')
+        .then(response => response.json())
+        .then(data => {
+          this.datos = data;  // Asigna los datos del archivo JSON a la variable 'datos'
+        })
+        .catch(error => console.error('Error al cargar los datos del JSON:', error));
+    }
   
-  realizarBusqueda(nombreJugador: string) {
-    this.jugadorEncontrado = this.datos.find(
-      (jugador) => jugador.nombre.toLowerCase() === nombreJugador.toLowerCase() &&
-                    jugador.posicion === this.posicionSeleccionada
-    );
+    realizarBusqueda(nombreJugador: string) {
+      // Buscar un jugador que coincida con el nombre y la posición seleccionada
+      this.jugadorEncontrado = this.datos.find(
+        (jugador) =>
+          jugador.nombre.toLowerCase() === nombreJugador.toLowerCase() &&
+          jugador.posicion.toLowerCase() === this.posicionSeleccionada.toLowerCase()
+      );
   
-    if (this.jugadorEncontrado) {
+      if (this.jugadorEncontrado) {
+        this.jugadorNoEncontrado = false;
+      } else {
+        this.jugadorNoEncontrado = true;
+        this.jugadorEncontrado = null;
+      }
+    }
+  
+    resetBusqueda() {
       this.jugadorNoEncontrado = false;
-    } else {
-      this.jugadorNoEncontrado = true;
-      this.jugadorEncontrado = null;
+      this.posicionSeleccionada = '';
     }
   }
-  
-  resetBusqueda() {
-    this.jugadorNoEncontrado = false;
-    this.posicionSeleccionada = '';
-  }
-}
-  
