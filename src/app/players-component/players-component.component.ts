@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { players } from '../../data/data'; 
 import { CommonModule } from '@angular/common';
 import { DetailComponent } from "../detail-component/detail-component.component";
+import { JugadoresService } from '../service/jugadores.service';  // Importa el servicio
+
 @Component({
   selector: 'app-players-component',
   standalone: true,
@@ -21,12 +23,16 @@ export class PlayersComponent {
   posicionSeleccionada: string = '';
   jugadorEncontrado: any = null;
   jugadorNoEncontrado: boolean = false;
-  datos: any[] = [ 
-    { nombre: 'Jugador 1', equipo: 'Equipo A', posicion: 'Base' },
-    { nombre: 'Jugador 2', equipo: 'Equipo B', posicion: 'Alero' },
-    // Añade más jugadores aquí para la búsqueda
-  ];
+  datos: any[] = [ ];
   
+  constructor(private jugadoresService: JugadoresService) { }
+
+  ngOnInit() {
+    this.jugadoresService.getJugadores().subscribe((data) => {
+      this.datos = data;  // Cargar los jugadores desde el archivo JSON
+    });
+  }
+
   seleccionarPosicion(posicion: string) {
     this.posicionSeleccionada = posicion;
   }
