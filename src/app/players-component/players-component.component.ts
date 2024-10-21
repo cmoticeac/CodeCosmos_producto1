@@ -16,26 +16,38 @@ import { DetailComponent } from "../detail-component/detail-component.component"
   C.  Incorporar el HTML+CSS para diseñar el listado
   D. Incorporar el listado a la aplicación
   */
+ 
 export class PlayersComponent {
-  playersList = players;
-  contador: number[];
-  verComponenteDetail:boolean;
-
-  constructor(){
-    this.contador=[];
-    this.verComponenteDetail=false;
-    
-  }
-
-  // se pasa un numero para su posterior lectura array[indice] luego *ngFor
-  getIndice(numeroIndice: number): number[] {
-    this.contador = Array.from({ length: numeroIndice }, (_, indice) => indice);
-     return this.contador;
+  posicionSeleccionada: string = '';
+  jugadorEncontrado: any = null;
+  jugadorNoEncontrado: boolean = false;
+  datos: any[] = [ 
+    { nombre: 'Jugador 1', equipo: 'Equipo A', posicion: 'Base' },
+    { nombre: 'Jugador 2', equipo: 'Equipo B', posicion: 'Alero' },
+    // Añade más jugadores aquí para la búsqueda
+  ];
+  
+  seleccionarPosicion(posicion: string) {
+    this.posicionSeleccionada = posicion;
   }
   
+  realizarBusqueda(nombreJugador: string) {
+    this.jugadorEncontrado = this.datos.find(
+      (jugador) => jugador.nombre.toLowerCase() === nombreJugador.toLowerCase() &&
+                    jugador.posicion === this.posicionSeleccionada
+    );
   
-  cargaBusqueda(){
-    this.verComponenteDetail=true;
+    if (this.jugadorEncontrado) {
+      this.jugadorNoEncontrado = false;
+    } else {
+      this.jugadorNoEncontrado = true;
+      this.jugadorEncontrado = null;
+    }
   }
-
+  
+  resetBusqueda() {
+    this.jugadorNoEncontrado = false;
+    this.posicionSeleccionada = '';
+  }
 }
+  
