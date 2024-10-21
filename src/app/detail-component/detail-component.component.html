@@ -1,0 +1,26 @@
+<!--
+  A.Incorporar los datos creados al componente
+  B.Usando los eventos de comunicación de Angular, comunicar el item seleccionado en el listado
+   al detalle para previsualizar los datos de ese detalle.
+  C.Incorporar el HTML+CSS para diseñar el listado
+  D.Incorporar el listado a la aplicación
+-->
+<h4>{{equipoSeleccionado}}</h4>  
+<div class="container detallesequipo">
+  <div class="card bg-light">
+
+    <div class="card-header">Listado de Jugadores del Equipo</div>
+    <div class="card-body">
+     
+    <div *ngIf="datos">
+        <div class="playerItem" *ngFor="let item of datos">
+          <div *ngIf="item.equipo == equipoSeleccionado">
+            <p >Nombre: {{ item.nombre }}</p> 
+          </div>
+        </div>
+    </div>
+
+
+    </div>
+  </div>
+</div>
