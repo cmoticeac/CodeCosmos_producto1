@@ -1,1 +1,96 @@
-<p>players-component works!</p>
+<!--div class="row">
+    <div class="col-12 text-center"-->
+      <div class="container busquedajugadores">
+      <div class="card bg-light">
+        <div class="card-header">Busqueda de Jugadores</div>
+        <div class="card-body">
+          <div class="col-4 text-center linea">
+            <div class="container busqueda">
+            <div class="card bg-light">
+              <div class="card-header">Buscador</div>
+              <div class="card-body">
+                
+                <input type="nombrejugador" class="form-control" id="nombrejugador" placeholder="Introduce el nombre del jugador">
+                <br>
+                <button type="button" class="btn btn-secondary"(click)="cargaBusqueda()">Buscar por nombre</button>
+  
+                <br>
+                <br> 
+  
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Posición
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Base</a>
+                    <a class="dropdown-item" href="#">Escolta</a>
+                    <a class="dropdown-item" href="#">Alero</a>
+                    <a class="dropdown-item" href="#">Ala-Pivot</a>
+                    <a class="dropdown-item" href="#">Pivot</a>
+                  </div>
+                </div>
+  
+                <br>
+  
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    Edad
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <p *ngFor="let contador of getIndice(45)"><a class="dropdown-item" href="#">{{ contador + 1 }}</a></p>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+            </div>
+          </div>
+  
+          <div class="col-6 text-center linea">
+            <div class="jugadores">
+            <div class="card bg-light">
+              <div class="card-header">Jugadores</div>
+              <div class="card-body">
+                
+                <div class="card bg-light">
+                  <div class="col-6 text-center linea"></div>
+                  <div class="card-body">
+                    <img src="/CodeCosmos_producto1/src/assets/persona.jpg">
+                    <br>
+                    <br>
+                    <p><i>Nombre:</i> Jugador 1</p>
+                    <p><i>Equipo:</i> Equipo x</p>
+                    <button type="button" class="btn btn-secondary">Ver detalles del jugador</button>
+                  </div>
+                </div>
+                
+                <br>
+                
+                <div class="card bg-light">
+                  <div class="col-6 text-center linea"></div>
+                  <div class="card-body">
+                    <img src="/CodeCosmos_producto1/src/assets/persona.jpg">
+                    <br>
+                    <br>
+                    <p><i>Nombre:</i> Jugador 2</p>
+                    <p><i>Equipo:</i> Equipo x</p>
+                    <button type="button" class="btn btn-secondary">Ver detalles del jugador</button>
+                  </div>
+                </div>
+  
+                </div>  
+              </div>
+            </div>
+          </div>
+          </div>
+        
+        </div>
+      </div>
+      <!--/div >
+    </div -->
+
+    <app-detail-component></app-detail-component>
+
+  <!-- /div-->
+  

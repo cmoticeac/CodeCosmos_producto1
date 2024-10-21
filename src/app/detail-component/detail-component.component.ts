@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+ 
+import { CommonModule } from '@angular/common';
+import listadoNombreEquipo from '../../assets/datos-equipos.json';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-detail-component',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './detail-component.component.html',
   styleUrl: './detail-component.component.css'
 })
@@ -16,5 +20,15 @@ C.Incorporar el HTML+CSS para diseñar el listado
 D.Incorporar el listado a la aplicación
 */
 export class DetailComponent {
+
+  datos:any[]=listadoNombreEquipo;
+
+  @Input() equipoSeleccionado: string ='';
+  nombreEquipoSel: string;
+  constructor(){
+    this.nombreEquipoSel=this.equipoSeleccionado;
+   
+  }
+  //seleccion=  equipoSeleccionado
 
 }

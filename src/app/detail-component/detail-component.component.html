@@ -5,6 +5,22 @@
   C.Incorporar el HTML+CSS para diseñar el listado
   D.Incorporar el listado a la aplicación
 -->
+<h4>{{equipoSeleccionado}}</h4>  
+<div class="container detallesequipo">
+  <div class="card bg-light">
 
-<div> Listado de equipos al pulsar boton</div>
+    <div class="card-header">Listado de Jugadores del Equipo</div>
+    <div class="card-body">
+     
+    <div *ngIf="datos">
+        <div class="playerItem" *ngFor="let item of datos">
+          <div *ngIf="item.equipo == equipoSeleccionado">
+            <p >Nombre: {{ item.nombre }}</p> 
+          </div>
+        </div>
+    </div>
 
+
+    </div>
+  </div>
+</div>

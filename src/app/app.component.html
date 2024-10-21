@@ -1,26 +1,95 @@
 
-<div class="container">
-  
-  <div class="row">
-    
-      <div class="col-12 text-center">
-        <div class="container botonespaginainicio">
-          <button (click)="muestraEquipos()"  type="button" class="btn btn-secondary linea" >Equipos</button>
-          <button type="button" class="btn btn-secondary linea">Jugagores</button>
-          <button type="button" class="btn btn-secondary linea">Partidos</button>
-        </div>      
-      </div>    
-      <!--  hacer visible detail si se pulsa boton equipos-->
-  </div>    
-
-  
-  <div [hidden]="!componenteVisible">Content to render when condition is      true.
-   <app-lista-equipos-component></app-lista-equipos-component>
-    <app-detail-component></app-detail-component>  
+<div class="row">
+  <div class="col-12 text-center">
+    <div class="container">
+      <nav class="navbar navbar-fixed-top navbar-light bg-light border rounded">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/CodeCosmos.png">
+        </a>
+        <div class="mx-auto">
+        <p>Gestor de jugadores</p>
+        </div>
+      </nav>
+    </div>
   </div>
-   
+
+<div class="row">
+  <div class="col-12 text-center">
+    <div class="container botonespaginainicio">
+      <div class="btn-group">
+        <div class="col-3 text-center linea"></div>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Equipos
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+            <div class="playerItem" *ngFor="let item of nombreEquipo">
+              <a class="dropdown-item" href="#" (click)="onSelect(item.equipo)"  >{{ item.equipo }}</a>             
+            </div>
+          </div> 
+
+        </div>
+      </div>
+
+      <div class="col-3 text-center linea"></div>       
+      <button type="button" class="btn btn-secondary"(click)="seleccionarJugadores()">Jugadores</button>
+    </div>
+  </div>
 </div>
  
+</div>
 
-
+  
  
+<div class="row">
+  <div class="col-12 text-center">
+
+    <!--div class="container detallesequipo">
+    <div class="card bg-light"-->
+          <!-- aqui esta la logica de hidden de las tarjetas-->
+         <!--  al pulsar debe llamar acl componente que carga el equipo deseado    -->
+         
+         <div [hidden]="!componenteVisible">                
+           <app-detail-component [equipoSeleccionado]="equipoSeleccionado"></app-detail-component>              
+         </div>
+
+         
+         <!-- Aqui cuando se pulsa el boton click de judares-->
+         <div [hidden]="!componenteVerJugadores">                  
+           <app-players-component></app-players-component>
+         </div>
+
+  
+
+</div>
+
+
+<!--  pie de los componentes del equipo -->
+<footer>
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="container footerweb">
+        <div class="card text-bg-light">
+            <div class="card-body">
+              <div class="col-3 text-center linea">
+               <p>Camelia Ancuta Moticeac</p>
+               <p>Sue Cajidos Ros</p>
+               <p>Alejandro Arévalo Rojas</p>
+               <p>Carlos Bravo Serrano</p>
+               <p>Liliana Diaz Ibañez</p>
+              </div>
+              <div class="col-3 text-center linea">
+                
+              </div>
+               <div class="col-3 text-center linea">
+                <img src="../assets/CodeCosmos.png">
+               </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
