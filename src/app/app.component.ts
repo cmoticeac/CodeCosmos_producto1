@@ -5,7 +5,7 @@ import { PlayersComponent } from "./players-component/players-component.componen
 import { DetailComponent } from "./detail-component/detail-component.component";
 import { MediaComponent } from "./media-component/media-component.component";
 import { InicioComponent } from "./inicio/inicio.component";
-
+import { ListaEquiposComponent } from './lista-equipos/lista-equipos.component';
 import { CommonModule } from '@angular/common';
 
 import listadoNombreEquipo from '../assets/datos-equipos.json';
@@ -13,7 +13,7 @@ import listadoNombreEquipo from '../assets/datos-equipos.json';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PlayersComponent, DetailComponent, MediaComponent, InicioComponent, CommonModule],
+  imports: [RouterOutlet, PlayersComponent, DetailComponent, MediaComponent, InicioComponent, ListaEquiposComponent,CommonModule],
   templateUrl:'./app.component.html',
   styleUrl: './app.component.css'
 }) 
