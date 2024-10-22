@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { BusquedaPipe } from './pipes/busqueda.pipe';
 import { PlayersComponent } from "./players-component/players-component.component";
 import { DetailComponent } from "./detail-component/detail-component.component";
 import { MediaComponent } from "./media-component/media-component.component";
@@ -20,7 +20,8 @@ import listadoNombreEquipo from '../assets/datos-equipos.json';
     MediaComponent,
     InicioComponent,
     ListaEquiposComponent,
-    CommonModule
+    CommonModule,
+    BusquedaPipe
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']  // Cambiado a 'styleUrls'

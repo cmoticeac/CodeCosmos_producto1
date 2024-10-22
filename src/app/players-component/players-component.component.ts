@@ -1,58 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { players } from '../../data/data'; 
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';  // Importa FormsModule
 import { DetailComponent } from "../detail-component/detail-component.component";
-import { HttpClient } from '@angular/common/http';
-import { provideHttpClient } from '@angular/common/http';
+import { BusquedaPipe } from '../pipes/busqueda.pipe';
 
 @Component({
   selector: 'app-players-component',
   standalone: true,
-  imports: [CommonModule, DetailComponent ],
+  imports: [CommonModule, FormsModule, DetailComponent, BusquedaPipe],  // Agrega FormsModule aquí
   templateUrl: './players-component.component.html',
-  styleUrl: './players-component.component.css'
+  styleUrls: ['./players-component.component.css']  // Corregido a 'styleUrls'
 })
+export class PlayersComponent implements OnInit {
 
-/*
-  A.  Incorporar los datos creados al componente
-  B.  Usando directivas ngFor y ngIf realizar el listado
-  C.  Incorporar el HTML+CSS para diseñar el listado
-  D. Incorporar el listado a la aplicación
-  */
-  export class PlayersComponent implements OnInit {
-    posicionSeleccionada: string = '';
-    jugadorEncontrado: any = null;
-    jugadorNoEncontrado: boolean = false;
-    datos: any[] = [];  // Aquí almacenaremos los jugadores del JSON
+  posicionSeleccionada: string = '';
+  searchText: string = '';
   
-    ngOnInit() {
-      // Cargar los datos usando fetch
-      fetch('/assets/datos-equipos.json')
-        .then(response => response.json())
-        .then(data => {
-          this.datos = data;  // Asigna los datos del archivo JSON a la variable 'datos'
-        })
-        .catch(error => console.error('Error al cargar los datos del JSON:', error));
-    }
+  datos: any[] = [];  // Aquí almacenaremos los jugadores del JSON
   
-    realizarBusqueda(nombreJugador: string) {
-      // Buscar un jugador que coincida con el nombre y la posición seleccionada
-      this.jugadorEncontrado = this.datos.find(
-        (jugador) =>
-          jugador.nombre.toLowerCase() === nombreJugador.toLowerCase() &&
-          jugador.posicion.toLowerCase() === this.posicionSeleccionada.toLowerCase()
-      );
-  
-      if (this.jugadorEncontrado) {
-        this.jugadorNoEncontrado = false;
-      } else {
-        this.jugadorNoEncontrado = true;
-        this.jugadorEncontrado = null;
-      }
-    }
-  
-    resetBusqueda() {
-      this.jugadorNoEncontrado = false;
-      this.posicionSeleccionada = '';
-    }
+  ngOnInit(): void {
+    // Cargar los datos usando fetch
+    fetch('/assets/datos-equipos.json')
+      .then(response => response.json())
+      .then(data => {
+        this.datos = data;  // Asigna los datos del archivo JSON a la variable 'datos'
+      })
+      .catch(error => console.error('Error al cargar los datos del JSON:', error));
   }
+}

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row"> 
   <div class="col-12 text-center">
     <div class="container busquedajugadores">
       <div class="card bg-light">
@@ -12,7 +12,7 @@
                 <div class="card-body">
 
                   <!-- Campo para buscar por nombre de jugador -->
-                  <input type="text" class="form-control" placeholder="Introduce el nombre del jugador" #nombreInput>
+                  <input type="text" [(ngModel)]="searchText" placeholder="Introduce el nombre del jugador">
                   <br>
 
                   <!-- Dropdown para seleccionar la posición -->
@@ -33,11 +33,6 @@
 
                   <br>
 
-                  <!-- Botón de búsqueda que pasa el valor de la referencia de plantilla -->
-                  <button type="button" class="btn btn-secondary" (click)="realizarBusqueda(nombreInput.value)">Buscar jugador</button>
-
-                  <br><br>
-
                 </div>
               </div>
             </div>
@@ -50,26 +45,16 @@
                 <div class="card-header">Jugadores</div>
                 <div class="card-body">
 
-                  <!-- Mostrar los detalles del jugador encontrado -->
-                  <div class="col-6 text-center linea" *ngIf="jugadorEncontrado">
-                    <div class="jugadores">
-                      <div class="card bg-light">
-                        <div class="card-header">Jugador encontrado</div>
-                        <div class="card-body">
-                          <p><i>Nombre:</i> {{ jugadorEncontrado.nombre }}</p>
-                          <p><i>Apellido:</i> {{ jugadorEncontrado.nombre }}</p>
-                          <p><i>Equipo:</i> {{ jugadorEncontrado.equipo }}</p>
-                          <p><i>Posición:</i> {{ jugadorEncontrado.posicion }}</p>
-                          <p><i>Partidos:</i> {{ jugadorEncontrado.partidos }}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <!-- Mostrar la lista filtrada de jugadores -->
+                  <ul>
+                    <li *ngFor="let jugador of datos | busqueda: searchText : posicionSeleccionada">
+                      {{ jugador.nombre }} - {{ jugador.posicion }}
+                    </li>
+                  </ul>
 
                   <!-- Mensaje si no se encuentra el jugador -->
-                  <div *ngIf="jugadorNoEncontrado">
+                  <div *ngIf="(datos | busqueda: searchText : posicionSeleccionada).length === 0">
                     <p>No se encontró ningún jugador con los parámetros seleccionados.</p>
-                    <button type="button" class="btn btn-secondary" (click)="resetBusqueda()">Reintentar</button>
                   </div>
 
                 </div>
