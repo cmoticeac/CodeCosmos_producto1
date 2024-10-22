@@ -5,6 +5,7 @@
         <div class="card-header">Búsqueda de Jugadores</div>
         <div class="card-body">
 
+          <!-- Sección de búsqueda -->
           <div class="col-4 text-center linea">
             <div class="container busqueda">
               <div class="card bg-light">
@@ -31,35 +32,36 @@
 
                   <p>Posición seleccionada: {{ posicionSeleccionada }}</p>
 
-                  <br>
+                  <!-- Botón para realizar la búsqueda -->
+                  <button type="button" class="btn btn-secondary" (click)="realizarBusqueda()">Buscar jugador</button>
+
+                  <br><br>
 
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Sección de lista de jugadores -->
-          <div class="col-6 text-center linea">
+          <!-- Sección de resultado -->
+          <div class="col-6 text-center linea" *ngIf="jugadorEncontrado">
             <div class="jugadores">
               <div class="card bg-light">
-                <div class="card-header">Jugadores</div>
+                <div class="card-header">Jugador encontrado</div>
                 <div class="card-body">
-
-                  <!-- Mostrar la lista filtrada de jugadores -->
-                  <ul>
-                    <li *ngFor="let jugador of datos | busqueda: searchText : posicionSeleccionada">
-                      {{ jugador.nombre }} - {{ jugador.posicion }}
-                    </li>
-                  </ul>
-
-                  <!-- Mensaje si no se encuentra el jugador -->
-                  <div *ngIf="(datos | busqueda: searchText : posicionSeleccionada).length === 0">
-                    <p>No se encontró ningún jugador con los parámetros seleccionados.</p>
-                  </div>
-
+                  <p><i>Nombre:</i> {{ jugadorEncontrado.nombre }}</p>
+                  <p><i>Equipo:</i> {{ jugadorEncontrado.equipo }}</p>
+                  <p><i>Posición:</i> {{ jugadorEncontrado.posicion }}</p>
+                  <p><i>Altura:</i> {{ jugadorEncontrado.altura }}</p>
+                  <p><i>Partidos:</i> {{ jugadorEncontrado.partidos }}</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Mensaje si no se encuentra el jugador -->
+          <div *ngIf="jugadorNoEncontrado">
+            <p>No se encontró ningún jugador con los parámetros seleccionados.</p>
+            <button type="button" class="btn btn-secondary" (click)="resetBusqueda()">Reintentar</button>
           </div>
 
         </div>
@@ -69,3 +71,4 @@
 </div>
 
 <app-detail-component></app-detail-component>
+
