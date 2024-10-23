@@ -9,7 +9,11 @@
     "posicion": "Base",
     "altura": "1.88m",
     "partidos": 120,
-    "img": "/assets/CodeCosmos.png"
+    "img": [
+      "/imagenes/player01_01.png",
+      "/assets/imagenes/player01_02.jpg"
+    ],
+    "video" : "/assets/videos/videoplayback.mp4"
   },
   {
     "idequipo":1,

@@ -3,23 +3,44 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detail-component',
-  standalone: true,  // Hacer que el componente sea standalone
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './detail-component.component.html',
   styleUrls: ['./detail-component.component.css']
 })
 export class DetailComponent implements OnInit {
   @Input() equipoSeleccionado: string = '';  // Recibe el equipo seleccionado
-
-  datos: any[] = [];  // Se cargará desde el JSON
+  jugadores: any[] = [];  // Se cargará desde el JSON
+  jugadoresFiltrados: any[] = [];  // Almacena los jugadores filtrados según el equipo
+  jugadorSeleccionado: any = null;  // Jugador seleccionado
 
   ngOnInit(): void {
     // Cargar los datos desde el archivo equipo-datos.json
     fetch('/assets/datos-equipos.json')
       .then(response => response.json())
       .then(data => {
-        this.datos = data;  // Asigna los datos del JSON a la variable datos
+        this.jugadores = data;  // Asigna los datos del JSON a la variable 'jugadores'
+        this.filtrarJugadores();  // Filtrar jugadores por equipo
       })
       .catch(error => console.error('Error al cargar los datos del JSON:', error));
+  }
+
+  ngOnChanges(): void {
+    // Filtrar jugadores cuando cambia el equipo seleccionado
+    this.filtrarJugadores();
+  }
+
+  // Función para filtrar los jugadores según el equipo seleccionado
+  filtrarJugadores() {
+    if (this.equipoSeleccionado) {
+      this.jugadoresFiltrados = this.jugadores.filter(jugador => jugador.equipo === this.equipoSeleccionado);
+    } else {
+      this.jugadoresFiltrados = [];
+    }
+  }
+
+  // Función para seleccionar el jugador
+  seleccionarJugador(jugador: any) {
+    this.jugadorSeleccionado = jugador;
   }
 }
