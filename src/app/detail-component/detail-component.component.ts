@@ -1,34 +1,25 @@
- 
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import listadoNombreEquipo from '../../assets/datos-equipos.json';
-import { Component, Input } from '@angular/core';
-
 
 @Component({
   selector: 'app-detail-component',
-  standalone: true,
+  standalone: true,  // Hacer que el componente sea standalone
   imports: [CommonModule],
   templateUrl: './detail-component.component.html',
-  styleUrl: './detail-component.component.css'
+  styleUrls: ['./detail-component.component.css']
 })
+export class DetailComponent implements OnInit {
+  @Input() equipoSeleccionado: string = '';  // Recibe el equipo seleccionado
 
-/*
-A.Incorporar los datos creados al componente
-B.Usando los eventos de comunicación de Angular, comunicar el item seleccionado en el listado
- al detalle para previsualizar los datos de ese detalle.
-C.Incorporar el HTML+CSS para diseñar el listado
-D.Incorporar el listado a la aplicación
-*/
-export class DetailComponent {
+  datos: any[] = [];  // Se cargará desde el JSON
 
-  datos:any[]=listadoNombreEquipo;
-
-  @Input() equipoSeleccionado: string ='';
-  nombreEquipoSel: string;
-  constructor(){
-    this.nombreEquipoSel=this.equipoSeleccionado;
-   
+  ngOnInit(): void {
+    // Cargar los datos desde el archivo equipo-datos.json
+    fetch('/assets/datos-equipos.json')
+      .then(response => response.json())
+      .then(data => {
+        this.datos = data;  // Asigna los datos del JSON a la variable datos
+      })
+      .catch(error => console.error('Error al cargar los datos del JSON:', error));
   }
-  //seleccion=  equipoSeleccionado
-
 }

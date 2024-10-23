@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';  // Importa FormsModule para ngModel
 import { DetailComponent } from "../detail-component/detail-component.component";
@@ -18,6 +18,7 @@ export class PlayersComponent implements OnInit {
   datos: any[] = [];  // Aquí almacenaremos los jugadores del JSON
   jugadorEncontrado: any = null;
   jugadorNoEncontrado: boolean = false;
+  equipoSeleccionado: string = '';
 
   ngOnInit(): void {
     // Cargar los datos usando fetch
@@ -44,6 +45,10 @@ export class PlayersComponent implements OnInit {
       this.jugadorEncontrado = null;
       this.jugadorNoEncontrado = true;
     }
+  }
+
+  seleccionarEquipo(equipo: string) {
+    this.equipoSeleccionado = equipo;  // Aquí pasamos el equipo seleccionado
   }
 
   // Método para resetear la búsqueda
