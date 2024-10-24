@@ -28,6 +28,8 @@ export class DetailComponent implements OnInit {
   ngOnChanges(): void {
     // Filtrar jugadores cuando cambia el equipo seleccionado
     this.filtrarJugadores();
+        // Resetear el jugador seleccionado cuando cambia el equipo
+        this.jugadorSeleccionado = null;
   }
 
   // Función para filtrar los jugadores según el equipo seleccionado
@@ -42,5 +44,10 @@ export class DetailComponent implements OnInit {
   // Función para seleccionar el jugador
   seleccionarJugador(jugador: any) {
     this.jugadorSeleccionado = jugador;
+  }
+
+   // Función para resetear el jugador seleccionado (se puede llamar al cambiar entre vistas)
+   resetJugadorSeleccionado() {
+    this.jugadorSeleccionado = null;
   }
 }

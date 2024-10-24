@@ -49,6 +49,7 @@ export class PlayersComponent implements OnInit {
 
   seleccionarEquipo(equipo: string) {
     this.equipoSeleccionado = equipo;  // Aquí pasamos el equipo seleccionado
+    this.resetJugadorSeleccionado();  // Resetea el jugador seleccionado al cambiar de equipo
   }
 
   // Método para resetear la búsqueda
@@ -58,4 +59,10 @@ export class PlayersComponent implements OnInit {
     this.jugadorEncontrado = null;
     this.jugadorNoEncontrado = false;
   }
+  
+  // Método para resetear el jugador seleccionado
+  resetJugadorSeleccionado() {
+    this.jugadorEncontrado = null;
+  }
+  
 }

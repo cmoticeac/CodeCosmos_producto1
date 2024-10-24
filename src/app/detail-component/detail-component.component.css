@@ -1,0 +1,9 @@
+.jugador-nombre {
+    color: blue;  /* El texto será azul */
+    text-decoration: underline;  /* Subrayado para que parezca un enlace */
+    cursor: pointer;  /* Cambia el cursor a "pointer" para indicar que es clicable */
+  }
+  
+  .jugador-nombre:hover {
+    color: darkblue;  /* Cambia el color cuando se pasa el cursor sobre el nombre */
+  }

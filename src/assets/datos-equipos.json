@@ -9,10 +9,8 @@
     "posicion": "Base",
     "altura": "1.88m",
     "partidos": 120,
-    "img": [
-      "/assets/imagenes/player01_01.png",
-      "/assets/imagenes/player01_02.png"
-    ],
+    "img1": "/assets/imagenes/player01_01.png",
+    "img2": "/assets/imagenes/player01_02.png",
     "video" : "/assets/videos/player01.mp4"
   },
   {
@@ -25,10 +23,8 @@
     "posicion": "Base",
     "altura": "1.85m",
     "partidos": 121,
-    "img": [
-      "/assets/imagenes/player02_01.png",
-      "/assets/imagenes/player02_02.png"
-    ],
+    "img1": "/assets/imagenes/player02_01.png",
+    "img2":"/assets/imagenes/player02_02.png", 
     "video" : "/assets/videos/player02.mp4"
   },
   {
@@ -41,10 +37,8 @@
     "posicion": "Escolta",
     "altura": "1.75m",
     "partidos": 80,
-    "img": [
-      "/assets/imagenes/player03_01.png",
-      "/assets/imagenes/player03_02.png"
-    ],
+    "img1": "/assets/imagenes/player03_01.png",
+    "img2": "/assets/imagenes/player03_02.png",
     "video" : "/assets/videos/player03.mp4"
   },
   {
@@ -57,10 +51,8 @@
     "posicion": "Alero",
     "altura": "2.02m",
     "partidos": 150, 
-    "img": [
-      "/assets/imagenes/player04_01.png",
-      "/assets/imagenes/player04_02.png"
-    ],
+    "img1": "/assets/imagenes/player04_01.png",
+    "img2": "/assets/imagenes/player04_02.png",
     "video" : "/assets/videos/player01.mp4"
   },
   {
@@ -73,10 +65,8 @@
     "posicion": "Ala-pívot",
     "altura": "1.85m",
     "partidos": 110,
-    "img": [
-      "/assets/imagenes/player05_01.png",
-      "/assets/imagenes/player05_02.png"
-    ],
+    "img1": "/assets/imagenes/player05_01.png",
+    "img2": "/assets/imagenes/player05_02.png",
     "video" : "/assets/videos/player02.mp4"
   },
   {
@@ -89,10 +79,8 @@
     "posicion": "Pívot",
     "altura": "2.10m",
     "partidos": 60,
-    "img": [
-      "/assets/imagenes/player06_01.png",
-      "/assets/imagenes/player06_02.png"
-    ],
+    "img1": "/assets/imagenes/player06_01.png",
+    "img2": "/assets/imagenes/player06_02.png",
     "video" : "/assets/videos/player03.mp4"
   }
 ]

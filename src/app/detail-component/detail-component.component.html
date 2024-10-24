@@ -2,12 +2,11 @@
   <div class="col-12 text-center">
     <div class="container">
       <div class="card bg-light">
-        <div class="card-header">Listado de Jugadores</div>
         <div class="card-body">
           <!-- Usamos *ngFor para iterar sobre los jugadores filtrados y agregamos (click) -->
           <ul>
             <li *ngFor="let jugador of jugadoresFiltrados" (click)="seleccionarJugador(jugador)">
-              {{ jugador.nombre }} {{ jugador.apellido }}
+              <span class="jugador-nombre">{{ jugador.nombre }}</span>  {{ jugador.apellido }}
             </li>
           </ul>
         </div>
@@ -18,8 +17,11 @@
 
 <!-- Mostrar detalles del jugador seleccionado -->
 <div *ngIf="jugadorSeleccionado">
+  <!-- Botón para cerrar el detalle y resetear la selección -->
+  <button (click)="resetJugadorSeleccionado()">Cerrar</button>
   <h4>Detalles del Jugador: {{ jugadorSeleccionado.nombre }}</h4>
-  <img [src]="jugadorSeleccionado.img" alt="{{ jugadorSeleccionado.nombre }}" width="200px">
+  <img [src]="jugadorSeleccionado.img1" alt="{{ jugadorSeleccionado.nombre }} Imagen 1" width="200px">
+  <img [src]="jugadorSeleccionado.img2" alt="{{ jugadorSeleccionado.nombre }} Imagen 2" width="200px">
   <p>Equipo: {{ jugadorSeleccionado.equipo }}</p>
   <p>Edad: {{ jugadorSeleccionado.edad }}</p>
   <p>Posición: {{ jugadorSeleccionado.posicion }}</p>
@@ -34,6 +36,10 @@
       Your browser does not support the video tag.
     </video>
   </div>
+
+    <!-- Botón para cerrar el detalle y resetear la selección -->
+    <button (click)="resetJugadorSeleccionado()">Cerrar</button>
+
 </div>
 
 
