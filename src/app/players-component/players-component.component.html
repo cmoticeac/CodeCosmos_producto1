@@ -15,12 +15,15 @@
                   <!-- Campo para buscar por nombre de jugador -->
                   <input type="text" [(ngModel)]="searchText" placeholder="Introduce el nombre del jugador">
                   <br>
+                  <br>
 
                   <!-- Dropdown para seleccionar la posición -->
                   <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                       Posición
                     </button>
+                    <br>
+                    <br>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       <a class="dropdown-item" href="#" (click)="posicionSeleccionada = 'Base'">Base</a>
                       <a class="dropdown-item" href="#" (click)="posicionSeleccionada = 'Escolta'">Escolta</a>
@@ -49,7 +52,9 @@
                 <div class="card-header">Jugador encontrado</div>
                 <div class="card-body">
                   <!-- Botón para cerrar el detalle -->
-                  <button (click)="resetJugadorSeleccionado()">Cerrar</button>
+                  <button type="button" class="btn btn-secondary" (click)="resetJugadorSeleccionado()">Cerrar</button>
+                  <br>
+                  <br>
                   <p><i>Nombre:</i> {{ jugadorEncontrado.nombre }}</p>
                   <p><i>Apellido:</i> {{ jugadorEncontrado.apellido }}</p>
                   <p><i>Equipo:</i> {{ jugadorEncontrado.equipo }}</p>
