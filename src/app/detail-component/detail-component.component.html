@@ -5,12 +5,8 @@
         <div class="card-body">
           <!-- Usamos *ngFor para iterar sobre los jugadores filtrados y agregamos (click) -->
           <ul>
-            <li
-              *ngFor="let jugador of jugadoresFiltrados"
-              (click)="seleccionarJugador(jugador)"
-            >
-              <span class="jugador-nombre">{{ jugador.nombre }}</span>
-              {{ jugador.apellido }}
+            <li *ngFor="let jugador of jugadoresFiltrados" (click)="seleccionarJugador(jugador)">
+              <span class="jugador-nombre">{{ jugador.nombre }}</span>  {{ jugador.apellido }}
             </li>
           </ul>
         </div>
@@ -24,34 +20,30 @@
   <!-- Botón para cerrar el detalle y resetear la selección -->
   <button (click)="resetJugadorSeleccionado()">Cerrar</button>
   <h4>Detalles del Jugador: {{ jugadorSeleccionado.nombre }}</h4>
-  <img
-    [src]="jugadorSeleccionado.img1"
-    alt="{{ jugadorSeleccionado.nombre }} Imagen 1"
-    width="200px"
-  />
-  <img
-    [src]="jugadorSeleccionado.img2"
-    alt="{{ jugadorSeleccionado.nombre }} Imagen 2"
-    width="200px"
-  />
+  <img [src]="jugadorSeleccionado.img1" alt="{{ jugadorSeleccionado.nombre }} Imagen 1" width="200px">
+  <img [src]="jugadorSeleccionado.img2" alt="{{ jugadorSeleccionado.nombre }} Imagen 2" width="200px">
   <p>Equipo: {{ jugadorSeleccionado.equipo }}</p>
   <p>Edad: {{ jugadorSeleccionado.edad }}</p>
   <p>Posición: {{ jugadorSeleccionado.posicion }}</p>
   <p>Altura: {{ jugadorSeleccionado.altura }}</p>
-  <p>Partidos: {{ jugadorSeleccionado.partidos }}</p>
+  <p>Partidos: {{ jugadorSeleccionado.partidos }} </p>
 
   <!-- Reproductor de video -->
   <div class="videopresentacion">
     <h4>Video Presentación</h4>
     <video width="600" controls>
-      <source [src]="jugadorSeleccionado.video" type="video/mp4" />
+      <source [src]="jugadorSeleccionado.video" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
 
-  <!-- Botón para cerrar el detalle y resetear la selección -->
-  <button (click)="resetJugadorSeleccionado()">Cerrar</button>
+    <!-- Botón para cerrar el detalle y resetear la selección -->
+    <button (click)="resetJugadorSeleccionado()">Cerrar</button>
+
 </div>
+
+
+
 
 <!--
   A.Incorporar los datos creados al componente
@@ -59,24 +51,6 @@
    al detalle para previsualizar los datos de ese detalle.
   C.Incorporar el HTML+CSS para diseñar el listado
   D.Incorporar el listado a la aplicación
-<<<<<<< HEAD
--->
-<h4>{{ equipoSeleccionado }}</h4>
-<div class="container detallesequipo">
-  <div class="card bg-light">
-    <div class="card-header">Listado de Jugadores del Equipo</div>
-    <div class="card-body">
-      <div *ngIf="datos">
-        <div class="playerItem" *ngFor="let item of datos">
-          <div *ngIf="item.equipo == equipoSeleccionado">
-            <p>Nombre: {{ item.nombre }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-=======
 
 <h4>Detalles del equipo: {{ equipoSeleccionado }}</h4>
 <div class="container detallesequipo">
@@ -84,29 +58,24 @@
     <div class="card-header">Listado de Jugadores del Equipo</div>
     <div class="card-body">
       <div *ngIf="datos.length > 0">
-        Agrega el (click) para seleccionar el jugador
-        <div
-          class="playerItem"
-          *ngFor="let item of datos"
-          (click)="seleccionarJugador(item)"
-        >
+        
+        Agrega el (click) para seleccionar el jugador 
+        <div class="playerItem" *ngFor="let item of datos" (click)="seleccionarJugador(item)">
           <div *ngIf="item.equipo === equipoSeleccionado">
             <p>Nombre: {{ item.nombre }}</p>
             <p>Apellido: {{ item.apellido }}</p>
           </div>
         </div>
 
-        <div
-          class="playerItem"
-          *ngFor="let item of datos"
-          (click)="seleccionarJugador(item)"
-        >
+        
+        <div class="playerItem" *ngFor="let item of datos" (click)="seleccionarJugador(item)">
           <div *ngIf="item.equipo === equipoSeleccionado">
             <p>Nombre: {{ item.nombre }}</p>
             <p>Apellido: {{ item.apellido }}</p>
-            Click en el jugador para ver los detalles
+             Click en el jugador para ver los detalles 
           </div>
-        </div>
+        </div> 
+
       </div>
       <div *ngIf="datos.length === 0">
         <p>No hay jugadores en el equipo seleccionado.</p>
@@ -114,13 +83,13 @@
     </div>
   </div>
 
-  Mostrar detalles del jugador seleccionado
+  Mostrar detalles del jugador seleccionado 
   <div *ngIf="jugadorSeleccionado">
     <h4>Detalles del Jugador: {{ jugadorSeleccionado.nombre }}</h4>
-    <p>Apellido: {{ jugadorSeleccionado.apellido }}</p>
-    <p>Equipo: {{ jugadorSeleccionado.equipo }}</p>
-    <p>Posición: {{ jugadorSeleccionado.posicion }}</p>
-    <p>Partidos: {{ jugadorSeleccionado.partidos }}</p>
+     <p>Apellido: {{ jugadorSeleccionado.apellido }}</p>
+     <p>Equipo: {{ jugadorSeleccionado.equipo }}</p>
+     <p>Posición: {{ jugadorSeleccionado.posicion }}</p>
+     <p>Partidos: {{ jugadorSeleccionado.partidos }}</p>
   </div>
 </div>
---> >>>>>>> d3e223add3cc77bebfcaff12bec3c8632ce92acd
+-->
