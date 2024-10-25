@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-12 text-center">
     <div class="container">
+      <br>
       <div class="card bg-light">
         <div class="card-body">
           <!-- Usamos *ngFor para iterar sobre los jugadores filtrados y agregamos (click) -->
@@ -18,10 +19,15 @@
 <!-- Mostrar detalles del jugador seleccionado -->
 <div *ngIf="jugadorSeleccionado">
   <!-- Botón para cerrar el detalle y resetear la selección -->
-  <button (click)="resetJugadorSeleccionado()">Cerrar</button>
+  <br>
+  <button type="button" class="btn btn-secondary"(click)="resetJugadorSeleccionado()">Cerrar</button>
+  <br>
+  <br>
   <h4>Detalles del Jugador: {{ jugadorSeleccionado.nombre }}</h4>
   <img [src]="jugadorSeleccionado.img1" alt="{{ jugadorSeleccionado.nombre }} Imagen 1" width="200px">
   <img [src]="jugadorSeleccionado.img2" alt="{{ jugadorSeleccionado.nombre }} Imagen 2" width="200px">
+  <br>
+  <br>
   <p>Equipo: {{ jugadorSeleccionado.equipo }}</p>
   <p>Edad: {{ jugadorSeleccionado.edad }}</p>
   <p>Posición: {{ jugadorSeleccionado.posicion }}</p>
@@ -36,9 +42,10 @@
       Your browser does not support the video tag.
     </video>
   </div>
+  <br>
 
     <!-- Botón para cerrar el detalle y resetear la selección -->
-    <button (click)="resetJugadorSeleccionado()">Cerrar</button>
+    <button type="button" class="btn btn-secondary"(click)="resetJugadorSeleccionado()">Cerrar</button>
 
 </div>
 
