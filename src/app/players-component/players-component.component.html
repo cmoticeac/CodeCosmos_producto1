@@ -1,42 +1,83 @@
-<div class="row"> 
+<div class="row">
   <div class="col-12 text-center">
     <div class="container busquedajugadores">
       <div class="card bg-light">
         <div class="card-header">Búsqueda de Jugadores</div>
         <div class="card-body">
-
           <!-- Sección de búsqueda -->
           <div class="col-4 text-center linea">
             <div class="container busqueda">
               <div class="card bg-light">
                 <div class="card-header">Buscador</div>
                 <div class="card-body">
-
                   <!-- Campo para buscar por nombre de jugador -->
-                  <input type="text" [(ngModel)]="searchText" placeholder="Introduce el nombre del jugador">
-                  <br>
+                  <input
+                    type="text"
+                    [(ngModel)]="searchText"
+                    placeholder="Introduce el nombre del jugador"
+                  />
+                  <br />
 
                   <!-- Dropdown para seleccionar la posición -->
                   <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
                       Posición
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#" (click)="posicionSeleccionada = 'Base'">Base</a>
-                      <a class="dropdown-item" href="#" (click)="posicionSeleccionada = 'Escolta'">Escolta</a>
-                      <a class="dropdown-item" href="#" (click)="posicionSeleccionada = 'Alero'">Alero</a>
-                      <a class="dropdown-item" href="#" (click)="posicionSeleccionada = 'Ala-pívot'">Ala-pívot</a>
-                      <a class="dropdown-item" href="#" (click)="posicionSeleccionada = 'Pívot'">Pívot</a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        (click)="posicionSeleccionada = 'Base'"
+                        >Base</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        (click)="posicionSeleccionada = 'Escolta'"
+                        >Escolta</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        (click)="posicionSeleccionada = 'Alero'"
+                        >Alero</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        (click)="posicionSeleccionada = 'Ala-pívot'"
+                        >Ala-pívot</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        (click)="posicionSeleccionada = 'Pívot'"
+                        >Pívot</a
+                      >
                     </div>
                   </div>
 
                   <p>Posición seleccionada: {{ posicionSeleccionada }}</p>
 
                   <!-- Botón para realizar la búsqueda -->
-                  <button type="button" class="btn btn-secondary" (click)="realizarBusqueda()">Buscar jugador</button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="realizarBusqueda()"
+                  >
+                    Buscar jugador
+                  </button>
 
-                  <br><br>
-
+                  <br /><br />
                 </div>
               </div>
             </div>
@@ -59,14 +100,20 @@
               </div>
             </div>
           </div>
-            
-          
+
           <!-- Mensaje si no se encuentra el jugador -->
           <div *ngIf="jugadorNoEncontrado">
-            <p>No se encontró ningún jugador con los parámetros seleccionados.</p>
-            <button type="button" class="btn btn-secondary" (click)="resetBusqueda()">Reintentar</button>
+            <p>
+              No se encontró ningún jugador con los parámetros seleccionados.
+            </p>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="resetBusqueda()"
+            >
+              Reintentar
+            </button>
           </div>
-
         </div>
       </div>
     </div>
@@ -74,4 +121,3 @@
 </div>
 
 <app-detail-component></app-detail-component>
-

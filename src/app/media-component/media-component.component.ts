@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './media-component.component.html',
-  styleUrls: ['./media-component.component.css']
+  styleUrls: ['./media-component.component.css'],
 })
 
 /*
@@ -20,14 +20,13 @@ import { CommonModule } from '@angular/common';
     E.Incorporar el listado a la aplicación
  */
 export class MediaComponent implements OnInit {
-
   jugadorSeleccionado: any = null;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     // Obtener los datos del jugador desde los parámetros de la ruta
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.jugadorSeleccionado = JSON.parse(params['jugador']);
     });
   }
@@ -43,7 +42,7 @@ export class MediaComponent implements OnInit {
 
   stopVideo(video: HTMLVideoElement) {
     video.pause();
-    video.currentTime = 0;  // Reinicia el video
+    video.currentTime = 0; // Reinicia el video
   }
 
   seekVideo(video: HTMLVideoElement, event: any) {
