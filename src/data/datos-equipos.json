@@ -9,9 +9,9 @@
     "posicion": "Base",
     "altura": "1.88m",
     "partidos": 120,
-    "img1": "/assets/imagenes/player01_01.png",
-    "img2": "/assets/imagenes/player01_02.png",
-    "video" : "/assets/videos/player01.mp4"
+    "img1": "assets/imagenes/player02_01.png",
+    "img2": "assets/imagenes/player01_02.png",
+    "video" : "assets/videos/player01.mp4"
   },
   {
     "idequipo":1,
