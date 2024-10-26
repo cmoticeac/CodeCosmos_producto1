@@ -19,9 +19,10 @@ export class PlayersComponent implements OnInit {
   jugadorNoEncontrado: boolean = false;
   equipoSeleccionado: string = '';
 
+
   ngOnInit(): void {
     // Cargar los datos usando fetch
-    fetch('/assets/datos-equipos.json')
+    fetch('data/datos-equipos.json')
       .then((response) => response.json())
       .then((data) => {
         this.datos = data; // Asigna los datos del archivo JSON a la variable 'datos'

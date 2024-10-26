@@ -16,7 +16,7 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     // Cargar los datos desde el archivo equipo-datos.json
-    fetch('/assets/datos-equipos.json')
+    fetch('data/datos-equipos.json')
       .then((response) => response.json())
       .then((data) => {
         this.jugadores = data; // Asigna los datos del JSON a la variable 'jugadores'
