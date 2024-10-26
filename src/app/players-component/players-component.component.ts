@@ -32,7 +32,7 @@ export class PlayersComponent implements OnInit {
   }
 
   // Método para realizar la búsqueda
-  realizarBusqueda() {
+ /* realizarBusqueda() {
     const resultado = this.datos.filter(
       (jugador) =>
         jugador.nombre.toLowerCase().includes(this.searchText.toLowerCase()) &&
@@ -47,9 +47,28 @@ export class PlayersComponent implements OnInit {
       this.jugadorEncontrado = null;
       this.jugadorNoEncontrado = true;
     }
-  }
+  } */
 
-  seleccionarEquipo(equipo: string) {
+    realizarBusqueda() {
+      const resultado = this.datos.filter((jugador) => {
+        const nombreCoincide = jugador.nombre.toLowerCase().includes(this.searchText.toLowerCase());
+        const posicionCoincide = this.posicionSeleccionada ? 
+                                 jugador.posicion.toLowerCase() === this.posicionSeleccionada.toLowerCase() : 
+                                 true;  // Si no hay posición seleccionada, siempre será true
+    
+        return nombreCoincide && posicionCoincide;
+      });
+    
+      if (resultado.length > 0) {
+        this.jugadorEncontrado = resultado[0];  // Si se encuentra, mostramos el primer jugador
+        this.jugadorNoEncontrado = false;
+      } else {
+        this.jugadorEncontrado = null;
+        this.jugadorNoEncontrado = true;
+      }
+    }
+    
+    seleccionarEquipo(equipo: string) {
     this.equipoSeleccionado = equipo; // Aquí pasamos el equipo seleccionado
     this.resetJugadorSeleccionado(); // Resetea el jugador seleccionado al cambiar de equipo
   }
