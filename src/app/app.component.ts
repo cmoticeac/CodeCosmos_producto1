@@ -8,7 +8,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ListaEquiposComponent } from './lista-equipos/lista-equipos.component';
 import { CommonModule } from '@angular/common';
 
-import listadoNombreEquipo from '../assets/datos-equipos.json';
+import listadoNombreEquipo from '../data/datos-equipos.json';
 
 @Component({
   selector: 'app-root',
