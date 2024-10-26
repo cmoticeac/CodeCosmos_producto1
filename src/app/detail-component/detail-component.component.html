@@ -6,8 +6,12 @@
         <div class="card-body">
           <!-- Usamos *ngFor para iterar sobre los jugadores filtrados y agregamos (click) -->
           <ul>
-            <li *ngFor="let jugador of jugadoresFiltrados" (click)="seleccionarJugador(jugador)">
-              <span class="jugador-nombre">{{ jugador.nombre }}</span>  {{ jugador.apellido }}
+            <li
+              *ngFor="let jugador of jugadoresFiltrados"
+              (click)="seleccionarJugador(jugador)"
+            >
+              <span class="jugador-nombre">{{ jugador.nombre }}</span>
+              {{ jugador.apellido }}
             </li>
           </ul>
         </div>
@@ -24,26 +28,40 @@
   <br>
   <br>
   <h4>Detalles del Jugador: {{ jugadorSeleccionado.nombre }}</h4>
+<<<<<<< HEAD
   <img [src]="jugadorSeleccionado.img1" alt="{{ jugadorSeleccionado.nombre }} Imagen 1" width="200px" class="rounded">
   <img [src]="jugadorSeleccionado.img2" alt="{{ jugadorSeleccionado.nombre }} Imagen 2" width="200px" class="rounded">
   <br>
   <br>
+=======
+  <img
+    [src]="jugadorSeleccionado.img1"
+    alt="{{ jugadorSeleccionado.nombre }} Imagen 1"
+    width="200px"
+  />
+  <img
+    [src]="jugadorSeleccionado.img2"
+    alt="{{ jugadorSeleccionado.nombre }} Imagen 2"
+    width="200px"
+  />
+>>>>>>> d4e14dd73fc562c0642a41aca31ed4b881de1955
   <p>Equipo: {{ jugadorSeleccionado.equipo }}</p>
   <p>Edad: {{ jugadorSeleccionado.edad }}</p>
   <p>Posición: {{ jugadorSeleccionado.posicion }}</p>
   <p>Altura: {{ jugadorSeleccionado.altura }}</p>
-  <p>Partidos: {{ jugadorSeleccionado.partidos }} </p>
+  <p>Partidos: {{ jugadorSeleccionado.partidos }}</p>
 
   <!-- Reproductor de video -->
   <div class="videopresentacion">
     <h4>Video Presentación</h4>
     <video width="600" controls>
-      <source [src]="jugadorSeleccionado.video" type="video/mp4">
+      <source [src]="jugadorSeleccionado.video" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
   <br>
 
+<<<<<<< HEAD
     <!-- Botón para cerrar el detalle y resetear la selección -->
     <button type="button" class="btn btn-secondary"(click)="resetJugadorSeleccionado()">Cerrar</button>
 
@@ -100,3 +118,8 @@
   </div>
 </div>
 -->
+=======
+  <!-- Botón para cerrar el detalle y resetear la selección -->
+  <button (click)="resetJugadorSeleccionado()">Cerrar</button>
+</div>
+>>>>>>> d4e14dd73fc562c0642a41aca31ed4b881de1955

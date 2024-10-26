@@ -53,7 +53,7 @@
     "partidos": 150, 
     "img1": "/assets/imagenes/player04_01.png",
     "img2": "/assets/imagenes/player04_02.png",
-    "video" : "/assets/videos/player01.mp4"
+    "video" : "/assets/videos/player04.mp4"
   },
   {
     "idequipo":4,
@@ -67,7 +67,7 @@
     "partidos": 110,
     "img1": "/assets/imagenes/player05_01.png",
     "img2": "/assets/imagenes/player05_02.png",
-    "video" : "/assets/videos/player02.mp4"
+    "video" : "/assets/videos/player05.mp4"
   },
   {
     "idequipo":5,
@@ -81,6 +81,6 @@
     "partidos": 60,
     "img1": "/assets/imagenes/player06_01.png",
     "img2": "/assets/imagenes/player06_02.png",
-    "video" : "/assets/videos/player03.mp4"
+    "video" : "/assets/videos/player06.mp4"
   }
 ]
