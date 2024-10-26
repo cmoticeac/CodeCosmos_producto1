@@ -7,10 +7,6 @@
   .jugador-nombre:hover {
     color: darkblue;  /* Cambia el color cuando se pasa el cursor sobre el nombre */
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> d4e14dd73fc562c0642a41aca31ed4b881de1955
   .videopresentacion {
     display: flex;
     flex-direction: column; /* Organiza los elementos en columna */
@@ -26,8 +22,4 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Hace que el video cubra completamente el contenedor */
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d4e14dd73fc562c0642a41aca31ed4b881de1955
