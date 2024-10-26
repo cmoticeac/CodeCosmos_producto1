@@ -24,7 +24,7 @@
               "src/assets",
               "src/public/favicon.ico",
               "src/assets/CodeCosmos.png",
-              "src/assets/datos-equipos.json"
+              "src/data/datos-equipos.json"
 
             ],            
             "styles": [

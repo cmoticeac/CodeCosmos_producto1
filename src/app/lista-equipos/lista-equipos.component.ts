@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import listadoNombreEquipo from '../../assets/datos-equipos.json';
+import listadoNombreEquipo from '../../data/datos-equipos.json';
 import { CommonModule } from '@angular/common';
 
 //import { ServicioCliente } from '../servicio-cliente/servicio-cliente.component';
