@@ -3,13 +3,9 @@
     <div class="card bg-light">
       <div class="card-header">Búsqueda de Jugadores</div>
       <div class="card-body">
-        <!-- Sección de búsqueda -->
-        
           
-                
-
           <!-- Sección de búsqueda -->
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center linea">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center linea">
             <div class="container busqueda">
               <div class="card bg-light">
                 <div class="card-header">Buscador</div>
@@ -48,10 +44,9 @@
               </div>
             </div>
           </div>
-          <br>
-          <br>
+          
           <!-- Sección de resultado -->
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center linea" *ngIf="jugadorEncontrado">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center linea" *ngIf="jugadorEncontrado">
             <div class="jugadores">
               <div class="card bg-light">
                 <div class="card-header">Jugador encontrado</div>
@@ -77,7 +72,6 @@
             <p>No se encontró ningún jugador con los parámetros seleccionados.</p>
             <button type="button" class="btn btn-secondary" (click)="resetBusqueda()">Reintentar</button>
           </div>
-          
       </div> <!-- Cierra card-body de busqueda de jugadores -->
     </div> <!-- Cierra card de busqueda de jugadores -->
   </div> <!-- Cierra container de busquedajugadores -->
